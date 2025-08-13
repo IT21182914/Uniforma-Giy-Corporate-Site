@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+/* Custom Colors */
+:root {
+  --whatsapp-green: #25D366;
+  --whatsapp-green-dark: #128C7E;
+}
 
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;

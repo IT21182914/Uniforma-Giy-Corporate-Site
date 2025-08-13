@@ -7,17 +7,32 @@ const WhatsAppButton = ({
   variant = "floating",
   text,
   className = "",
+  style = {},
   ...props
 }) => {
+  // Official WhatsApp colors
+  const whatsappStyle = {
+    backgroundColor: "#25D366",
+    ...style,
+  };
+
+  const handleHover = (e) => {
+    e.target.style.backgroundColor = "#128C7E";
+  };
+
+  const handleHoverOut = (e) => {
+    e.target.style.backgroundColor = "#25D366";
+  };
+
   const variants = {
     floating:
-      "fixed bottom-6 right-6 z-50 w-14 h-14 bg-green-500 hover:bg-green-600 text-white rounded-full shadow-lg hover:shadow-xl transform hover:scale-110 transition-all duration-300",
+      "fixed bottom-6 right-6 z-50 w-14 h-14 text-white rounded-full shadow-lg hover:shadow-xl transform hover:scale-110 transition-all duration-300",
     compact:
-      "inline-flex items-center px-3 py-2 text-sm font-medium text-white bg-green-500 hover:bg-green-600 rounded-lg transition-colors duration-200",
+      "inline-flex items-center px-3 py-2 text-sm font-medium text-white rounded-lg transition-colors duration-200",
     button:
-      "inline-flex items-center px-4 py-2 text-base font-medium text-white bg-green-500 hover:bg-green-600 rounded-lg transition-all duration-200 hover:shadow-md",
+      "inline-flex items-center px-4 py-2 text-base font-medium text-white rounded-lg transition-all duration-200 hover:shadow-md",
     header:
-      "inline-flex items-center px-4 py-2 text-sm font-medium bg-green-500 hover:bg-green-600 text-white rounded-lg transition-all duration-200",
+      "inline-flex items-center px-4 py-2 text-sm font-medium text-white rounded-lg transition-all duration-200",
   };
 
   const handleClick = () => {
@@ -28,7 +43,10 @@ const WhatsAppButton = ({
     return (
       <button
         onClick={handleClick}
+        onMouseEnter={handleHover}
+        onMouseLeave={handleHoverOut}
         className={classNames(variants[variant], className)}
+        style={whatsappStyle}
         title="Chat on WhatsApp"
         aria-label="Chat on WhatsApp"
         {...props}
@@ -41,7 +59,10 @@ const WhatsAppButton = ({
   return (
     <button
       onClick={handleClick}
+      onMouseEnter={handleHover}
+      onMouseLeave={handleHoverOut}
       className={classNames(variants[variant], className)}
+      style={whatsappStyle}
       {...props}
     >
       <FaWhatsapp size={variant === "compact" ? 16 : 20} className="mr-2" />
