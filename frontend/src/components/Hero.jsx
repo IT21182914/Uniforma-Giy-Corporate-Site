@@ -3,45 +3,54 @@ import Button from "./Button";
 import WhatsAppButton from "./WhatsAppButton";
 import translations from "../data/translations.json";
 
-const Hero = ({
-  language = "TR",
-  backgroundImage = "/api/placeholder/1920/1080",
-  overlay = true,
-}) => {
+const Hero = ({ language = "TR" }) => {
   const t = translations[language];
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image */}
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: `url(${backgroundImage})`,
-          backgroundPosition: "center center",
-        }}
-      />
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-white via-gray-50 to-blue-50">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-5">
+        <svg className="w-full h-full" viewBox="0 0 100 100" fill="none">
+          <defs>
+            <pattern
+              id="grid"
+              width="10"
+              height="10"
+              patternUnits="userSpaceOnUse"
+            >
+              <path
+                d="M 10 0 L 0 0 0 10"
+                fill="none"
+                stroke="#FF7900"
+                strokeWidth="1"
+              />
+            </pattern>
+          </defs>
+          <rect width="100" height="100" fill="url(#grid)" />
+        </svg>
+      </div>
 
-      {/* Overlay */}
-      {overlay && (
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/80 to-orange-900/60" />
-      )}
+      {/* Decorative Elements */}
+      <div className="absolute top-20 left-10 w-20 h-20 bg-orange-100 rounded-full opacity-60 animate-pulse"></div>
+      <div className="absolute bottom-20 right-10 w-32 h-32 bg-blue-100 rounded-full opacity-40 animate-pulse delay-1000"></div>
+      <div className="absolute top-1/2 right-20 w-16 h-16 bg-orange-200 rounded-full opacity-50 animate-pulse delay-500"></div>
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
         <div className="text-center">
           {/* Badge */}
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white text-sm font-medium mb-6">
-            <span className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></span>
+          <div className="inline-flex items-center px-6 py-3 rounded-full bg-orange-100 border border-orange-200 text-orange-700 text-sm font-semibold mb-6 shadow-sm">
+            <span className="w-2 h-2 bg-orange-500 rounded-full mr-2 animate-pulse"></span>
             {language === "TR" ? "25+ Yıl Deneyim" : "25+ Years Experience"}
           </div>
 
           {/* Headline */}
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-800 mb-6 leading-tight">
             {t.hero.headline}
           </h1>
 
           {/* Subtext */}
-          <p className="text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
             {t.hero.subtext}
           </p>
 

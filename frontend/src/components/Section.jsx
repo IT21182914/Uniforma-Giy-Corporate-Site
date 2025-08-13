@@ -12,16 +12,17 @@ const Section = ({
   const backgrounds = {
     white: "bg-white",
     gray: "bg-gray-50",
-    blue: "bg-blue-50",
+    light: "bg-blue-50",
     orange: "bg-orange-50",
+    blue: "bg-gradient-to-br from-blue-600 to-blue-700 text-white",
   };
 
   const paddings = {
     none: "",
-    sm: "py-8",
-    default: "py-16",
-    lg: "py-20",
-    xl: "py-24",
+    sm: "py-8 lg:py-12",
+    default: "py-12 lg:py-16",
+    lg: "py-16 lg:py-20",
+    xl: "py-20 lg:py-24",
   };
 
   return (

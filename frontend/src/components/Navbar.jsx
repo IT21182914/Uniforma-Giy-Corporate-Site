@@ -31,7 +31,9 @@ const Navbar = ({ language = "TR", onLanguageChange }) => {
     <header
       className={classNames(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        isScrolled ? "bg-white/95 backdrop-blur-sm shadow-lg" : "bg-transparent"
+        isScrolled
+          ? "bg-white/95 backdrop-blur-sm shadow-lg border-b border-gray-200"
+          : "bg-white/90 backdrop-blur-sm shadow-sm"
       )}
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -46,12 +48,7 @@ const Navbar = ({ language = "TR", onLanguageChange }) => {
                 e.target.style.display = "none";
               }}
             />
-            <span
-              className={classNames(
-                "text-xl font-bold",
-                isScrolled ? "text-gray-900" : "text-white"
-              )}
-            >
+            <span className="text-xl font-bold text-gray-800">
               Üniforma Giy
             </span>
           </Link>
@@ -63,14 +60,10 @@ const Navbar = ({ language = "TR", onLanguageChange }) => {
                 key={link.href}
                 to={link.href}
                 className={classNames(
-                  "text-sm font-medium transition-colors duration-200",
+                  "text-base font-medium transition-colors duration-200 px-3 py-2 rounded-md hover:bg-orange-50",
                   isActive(link.href)
-                    ? isScrolled
-                      ? "text-blue-600"
-                      : "text-orange-400"
-                    : isScrolled
-                    ? "text-gray-700 hover:text-blue-600"
-                    : "text-white hover:text-orange-400"
+                    ? "text-orange-600 bg-orange-50"
+                    : "text-gray-700 hover:text-orange-600"
                 )}
               >
                 {link.label}
@@ -83,17 +76,12 @@ const Navbar = ({ language = "TR", onLanguageChange }) => {
             <LangSwitcher
               currentLanguage={language}
               onLanguageChange={onLanguageChange}
-              variant={isScrolled ? "light" : "dark"}
+              variant="light"
             />
-            <WhatsAppButton
-              url={CONTACT_INFO.whatsapp}
-              variant="compact"
-              className={
-                isScrolled
-                  ? "bg-green-600 hover:bg-green-700"
-                  : "bg-green-500 hover:bg-green-600"
-              }
-            />
+            <WhatsAppButton url={CONTACT_INFO.whatsapp} variant="compact" />
+            <Button variant="primary" size="sm">
+              {language === "TR" ? "İletişim" : "Contact"}
+            </Button>
           </div>
 
           {/* Mobile menu button */}

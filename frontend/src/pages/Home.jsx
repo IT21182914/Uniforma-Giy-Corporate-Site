@@ -24,17 +24,17 @@ const Home = () => {
   );
 
   return (
-    <>
+    <div className="relative">
       {/* Hero Section */}
-      <Hero language={language} backgroundImage="/api/placeholder/1920/1080" />
+      <Hero language={language} />
 
       {/* Industry Badges Section */}
-      <Section background="gray" padding="sm">
+      <Section background="light" padding="default">
         <div className="text-center">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">
+          <h2 className="text-2xl font-bold text-gray-800 mb-8">
             {language === "TR" ? "Sektör Lideri" : "Industry Leader"}
           </h2>
-          <div className="flex flex-wrap items-center justify-center gap-4">
+          <div className="flex flex-wrap items-center justify-center gap-6">
             {[
               {
                 label: language === "TR" ? "ISO 9001" : "ISO 9001",
@@ -170,8 +170,7 @@ const Home = () => {
         variant="hero"
         backgroundImage="/api/placeholder/1920/600"
       />
-    </>
+    </div>
   );
 };
-
 export default Home;
