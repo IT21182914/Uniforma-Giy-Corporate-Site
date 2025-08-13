@@ -1,24 +1,24 @@
-import { useState, useMemo } from 'react';
-import { Search, Filter, Grid, List } from 'lucide-react';
-import ProductCard from './ProductCard';
-import Button from './Button';
-import Badge from './Badge';
-import { PRODUCT_CATEGORIES } from '../lib/constants';
-import { classNames } from '../lib/classNames';
-import translations from '../data/translations.json';
+import { useState, useMemo } from "react";
+import { Search, Filter, Grid, List } from "lucide-react";
+import ProductCard from "./ProductCard";
+import Button from "./Button";
+import Badge from "./Badge";
+import { PRODUCT_CATEGORIES } from "../lib/constants";
+import { classNames } from "../lib/classNames";
+import translations from "../data/translations.json";
 
-const ProductGrid = ({ 
-  products = [], 
-  language = 'TR',
+const ProductGrid = ({
+  products = [],
+  language = "TR",
   showFilters = true,
   showSearch = true,
   gridCols = 3,
-  className = '' 
+  className = "",
 }) => {
-  const [selectedCategory, setSelectedCategory] = useState('all');
-  const [searchQuery, setSearchQuery] = useState('');
-  const [sortBy, setSortBy] = useState('name');
-  const [viewMode, setViewMode] = useState('grid');
+  const [selectedCategory, setSelectedCategory] = useState("all");
+  const [searchQuery, setSearchQuery] = useState("");
+  const [sortBy, setSortBy] = useState("name");
+  const [viewMode, setViewMode] = useState("grid");
 
   const t = translations[language];
   const categories = PRODUCT_CATEGORIES[language];
@@ -28,16 +28,26 @@ const ProductGrid = ({
     let filtered = [...products];
 
     // Filter by category
-    if (selectedCategory !== 'all') {
-      filtered = filtered.filter(product => product.category === selectedCategory);
+    if (selectedCategory !== "all") {
+      filtered = filtered.filter(
+        (product) => product.category === selectedCategory
+      );
     }
 
     // Filter by search query
     if (searchQuery.trim()) {
       const query = searchQuery.toLowerCase();
-      filtered = filtered.filter(product => {
-        const title = (product.title[language] || product.title.EN || '').toLowerCase();
-        const description = (product.description[language] || product.description.EN || '').toLowerCase();
+      filtered = filtered.filter((product) => {
+        const title = (
+          product.title[language] ||
+          product.title.EN ||
+          ""
+        ).toLowerCase();
+        const description = (
+          product.description[language] ||
+          product.description.EN ||
+          ""
+        ).toLowerCase();
         return title.includes(query) || description.includes(query);
       });
     }
@@ -45,14 +55,14 @@ const ProductGrid = ({
     // Sort products
     filtered.sort((a, b) => {
       switch (sortBy) {
-        case 'name': {
-          const titleA = a.title[language] || a.title.EN || '';
-          const titleB = b.title[language] || b.title.EN || '';
+        case "name": {
+          const titleA = a.title[language] || a.title.EN || "";
+          const titleB = b.title[language] || b.title.EN || "";
           return titleA.localeCompare(titleB);
         }
-        case 'category':
+        case "category":
           return a.category.localeCompare(b.category);
-        case 'featured':
+        case "featured":
           return b.featured - a.featured;
         default:
           return 0;
@@ -63,10 +73,10 @@ const ProductGrid = ({
   }, [products, selectedCategory, searchQuery, sortBy, language]);
 
   const gridColsClass = {
-    1: 'grid-cols-1',
-    2: 'grid-cols-1 md:grid-cols-2',
-    3: 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3',
-    4: 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'
+    1: "grid-cols-1",
+    2: "grid-cols-1 md:grid-cols-2",
+    3: "grid-cols-1 md:grid-cols-2 lg:grid-cols-3",
+    4: "grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4",
   };
 
   return (
@@ -77,7 +87,10 @@ const ProductGrid = ({
           {/* Search Bar */}
           {showSearch && (
             <div className="relative max-w-md">
-              <Search size={20} className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+              <Search
+                size={20}
+                className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"
+              />
               <input
                 type="text"
                 placeholder={t.products.searchPlaceholder}
@@ -96,7 +109,9 @@ const ProductGrid = ({
                 {categories.map((category) => (
                   <Button
                     key={category.id}
-                    variant={selectedCategory === category.id ? 'primary' : 'ghost'}
+                    variant={
+                      selectedCategory === category.id ? "primary" : "ghost"
+                    }
                     size="sm"
                     onClick={() => setSelectedCategory(category.id)}
                   >
@@ -115,28 +130,38 @@ const ProductGrid = ({
                     onChange={(e) => setSortBy(e.target.value)}
                     className="text-sm border border-gray-300 rounded px-3 py-1 focus:outline-none focus:ring-2 focus:ring-blue-500"
                   >
-                    <option value="name">{language === 'TR' ? 'İsim' : 'Name'}</option>
-                    <option value="category">{language === 'TR' ? 'Kategori' : 'Category'}</option>
-                    <option value="featured">{language === 'TR' ? 'Öne Çıkan' : 'Featured'}</option>
+                    <option value="name">
+                      {language === "TR" ? "İsim" : "Name"}
+                    </option>
+                    <option value="category">
+                      {language === "TR" ? "Kategori" : "Category"}
+                    </option>
+                    <option value="featured">
+                      {language === "TR" ? "Öne Çıkan" : "Featured"}
+                    </option>
                   </select>
                 </div>
 
                 {/* View Mode Toggle */}
                 <div className="flex items-center border border-gray-300 rounded">
                   <button
-                    onClick={() => setViewMode('grid')}
+                    onClick={() => setViewMode("grid")}
                     className={classNames(
-                      'p-2 rounded-l',
-                      viewMode === 'grid' ? 'bg-blue-100 text-blue-600' : 'text-gray-500 hover:bg-gray-50'
+                      "p-2 rounded-l",
+                      viewMode === "grid"
+                        ? "bg-blue-100 text-blue-600"
+                        : "text-gray-500 hover:bg-gray-50"
                     )}
                   >
                     <Grid size={16} />
                   </button>
                   <button
-                    onClick={() => setViewMode('list')}
+                    onClick={() => setViewMode("list")}
                     className={classNames(
-                      'p-2 rounded-r',
-                      viewMode === 'list' ? 'bg-blue-100 text-blue-600' : 'text-gray-500 hover:bg-gray-50'
+                      "p-2 rounded-r",
+                      viewMode === "list"
+                        ? "bg-blue-100 text-blue-600"
+                        : "text-gray-500 hover:bg-gray-50"
                     )}
                   >
                     <List size={16} />
@@ -148,11 +173,13 @@ const ProductGrid = ({
 
           {/* Active Filters */}
           <div className="flex flex-wrap items-center gap-2">
-            {selectedCategory !== 'all' && (
+            {selectedCategory !== "all" && (
               <Badge variant="primary" className="flex items-center space-x-1">
-                <span>{categories.find(cat => cat.id === selectedCategory)?.label}</span>
+                <span>
+                  {categories.find((cat) => cat.id === selectedCategory)?.label}
+                </span>
                 <button
-                  onClick={() => setSelectedCategory('all')}
+                  onClick={() => setSelectedCategory("all")}
                   className="ml-1 hover:bg-blue-200 rounded-full p-0.5"
                 >
                   ×
@@ -160,10 +187,13 @@ const ProductGrid = ({
               </Badge>
             )}
             {searchQuery && (
-              <Badge variant="secondary" className="flex items-center space-x-1">
+              <Badge
+                variant="secondary"
+                className="flex items-center space-x-1"
+              >
                 <span>"{searchQuery}"</span>
                 <button
-                  onClick={() => setSearchQuery('')}
+                  onClick={() => setSearchQuery("")}
                   className="ml-1 hover:bg-orange-200 rounded-full p-0.5"
                 >
                   ×
@@ -176,25 +206,26 @@ const ProductGrid = ({
 
       {/* Products Count */}
       <div className="mb-6 text-sm text-gray-600">
-        {language === 'TR' 
+        {language === "TR"
           ? `${filteredAndSortedProducts.length} ürün bulundu`
-          : `${filteredAndSortedProducts.length} products found`
-        }
+          : `${filteredAndSortedProducts.length} products found`}
       </div>
 
       {/* Products Grid */}
       {filteredAndSortedProducts.length > 0 ? (
-        <div className={classNames(
-          viewMode === 'grid' 
-            ? `grid gap-6 ${gridColsClass[gridCols]}`
-            : 'space-y-4'
-        )}>
+        <div
+          className={classNames(
+            viewMode === "grid"
+              ? `grid gap-6 ${gridColsClass[gridCols]}`
+              : "space-y-4"
+          )}
+        >
           {filteredAndSortedProducts.map((product) => (
             <ProductCard
               key={product.id}
               product={product}
               language={language}
-              className={viewMode === 'list' ? 'flex-row' : ''}
+              className={viewMode === "list" ? "flex-row" : ""}
             />
           ))}
         </div>
@@ -206,11 +237,11 @@ const ProductGrid = ({
           <Button
             variant="outline"
             onClick={() => {
-              setSelectedCategory('all');
-              setSearchQuery('');
+              setSelectedCategory("all");
+              setSearchQuery("");
             }}
           >
-            {language === 'TR' ? 'Filtreleri Temizle' : 'Clear Filters'}
+            {language === "TR" ? "Filtreleri Temizle" : "Clear Filters"}
           </Button>
         </div>
       )}

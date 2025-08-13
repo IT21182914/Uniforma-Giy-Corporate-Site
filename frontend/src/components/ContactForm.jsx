@@ -1,25 +1,30 @@
-import { useState } from 'react';
-import { Send, CheckCircle, AlertCircle, User, Mail, Phone, Building, MessageSquare } from 'lucide-react';
-import Button from './Button';
-import { classNames } from '../lib/classNames';
-import translations from '../data/translations.json';
+import { useState } from "react";
+import {
+  Send,
+  CheckCircle,
+  AlertCircle,
+  User,
+  Mail,
+  Phone,
+  Building,
+  MessageSquare,
+} from "lucide-react";
+import Button from "./Button";
+import { classNames } from "../lib/classNames";
+import translations from "../data/translations.json";
 
-const ContactForm = ({ 
-  language = 'TR',
-  onSubmit,
-  className = ''
-}) => {
+const ContactForm = ({ language = "TR", onSubmit, className = "" }) => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    company: '',
-    message: ''
+    name: "",
+    email: "",
+    phone: "",
+    company: "",
+    message: "",
   });
-  
+
   const [errors, setErrors] = useState({});
-  const [status, setStatus] = useState('idle'); // idle, loading, success, error
-  const [submitMessage, setSubmitMessage] = useState('');
+  const [status, setStatus] = useState("idle"); // idle, loading, success, error
+  const [submitMessage, setSubmitMessage] = useState("");
 
   const t = translations[language];
 
@@ -28,23 +33,33 @@ const ContactForm = ({
     const newErrors = {};
 
     if (!formData.name.trim()) {
-      newErrors.name = language === 'TR' ? 'Ad soyad gereklidir' : 'Name is required';
+      newErrors.name =
+        language === "TR" ? "Ad soyad gereklidir" : "Name is required";
     }
 
     if (!formData.email.trim()) {
-      newErrors.email = language === 'TR' ? 'E-posta gereklidir' : 'Email is required';
+      newErrors.email =
+        language === "TR" ? "E-posta gereklidir" : "Email is required";
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      newErrors.email = language === 'TR' ? 'Geçerli bir e-posta adresi giriniz' : 'Please enter a valid email address';
+      newErrors.email =
+        language === "TR"
+          ? "Geçerli bir e-posta adresi giriniz"
+          : "Please enter a valid email address";
     }
 
     if (!formData.phone.trim()) {
-      newErrors.phone = language === 'TR' ? 'Telefon gereklidir' : 'Phone is required';
+      newErrors.phone =
+        language === "TR" ? "Telefon gereklidir" : "Phone is required";
     }
 
     if (!formData.message.trim()) {
-      newErrors.message = language === 'TR' ? 'Mesaj gereklidir' : 'Message is required';
+      newErrors.message =
+        language === "TR" ? "Mesaj gereklidir" : "Message is required";
     } else if (formData.message.trim().length < 10) {
-      newErrors.message = language === 'TR' ? 'Mesaj en az 10 karakter olmalıdır' : 'Message must be at least 10 characters';
+      newErrors.message =
+        language === "TR"
+          ? "Mesaj en az 10 karakter olmalıdır"
+          : "Message must be at least 10 characters";
     }
 
     setErrors(newErrors);
@@ -54,16 +69,16 @@ const ContactForm = ({
   // Handle input change
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
 
     // Clear error for this field
     if (errors[name]) {
-      setErrors(prev => ({
+      setErrors((prev) => ({
         ...prev,
-        [name]: ''
+        [name]: "",
       }));
     }
   };
@@ -76,7 +91,7 @@ const ContactForm = ({
       return;
     }
 
-    setStatus('loading');
+    setStatus("loading");
 
     try {
       // If custom onSubmit is provided, use it
@@ -84,55 +99,55 @@ const ContactForm = ({
         await onSubmit(formData);
       } else {
         // Default submission handler (stub)
-        await new Promise(resolve => setTimeout(resolve, 2000));
-        console.log('Form submitted:', formData);
+        await new Promise((resolve) => setTimeout(resolve, 2000));
+        console.log("Form submitted:", formData);
       }
 
-      setStatus('success');
+      setStatus("success");
       setSubmitMessage(t.contact.form.success);
-      
+
       // Reset form after successful submission
       setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        company: '',
-        message: ''
+        name: "",
+        email: "",
+        phone: "",
+        company: "",
+        message: "",
       });
 
       // Clear success message after 5 seconds
       setTimeout(() => {
-        setStatus('idle');
-        setSubmitMessage('');
+        setStatus("idle");
+        setSubmitMessage("");
       }, 5000);
-
     } catch (error) {
-      setStatus('error');
+      setStatus("error");
       setSubmitMessage(t.contact.form.error);
-      console.error('Form submission error:', error);
+      console.error("Form submission error:", error);
 
       // Clear error message after 5 seconds
       setTimeout(() => {
-        setStatus('idle');
-        setSubmitMessage('');
+        setStatus("idle");
+        setSubmitMessage("");
       }, 5000);
     }
   };
 
-  const inputStyles = 'w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors';
-  const labelStyles = 'block text-sm font-medium text-gray-700 mb-2';
+  const inputStyles =
+    "w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors";
+  const labelStyles = "block text-sm font-medium text-gray-700 mb-2";
 
   return (
-    <div className={classNames('max-w-2xl', className)}>
+    <div className={classNames("max-w-2xl", className)}>
       {/* Status Messages */}
-      {status === 'success' && (
+      {status === "success" && (
         <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg flex items-center">
           <CheckCircle className="text-green-600 mr-3" size={20} />
           <span className="text-green-800">{submitMessage}</span>
         </div>
       )}
 
-      {status === 'error' && (
+      {status === "error" && (
         <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg flex items-center">
           <AlertCircle className="text-red-600 mr-3" size={20} />
           <span className="text-red-800">{submitMessage}</span>
@@ -154,7 +169,9 @@ const ContactForm = ({
             onChange={handleChange}
             className={classNames(
               inputStyles,
-              errors.name ? 'border-red-300 focus:border-red-500 focus:ring-red-500' : ''
+              errors.name
+                ? "border-red-300 focus:border-red-500 focus:ring-red-500"
+                : ""
             )}
             placeholder={t.contact.form.name}
             required
@@ -180,7 +197,9 @@ const ContactForm = ({
               onChange={handleChange}
               className={classNames(
                 inputStyles,
-                errors.email ? 'border-red-300 focus:border-red-500 focus:ring-red-500' : ''
+                errors.email
+                  ? "border-red-300 focus:border-red-500 focus:ring-red-500"
+                  : ""
               )}
               placeholder={t.contact.form.email}
               required
@@ -204,7 +223,9 @@ const ContactForm = ({
               onChange={handleChange}
               className={classNames(
                 inputStyles,
-                errors.phone ? 'border-red-300 focus:border-red-500 focus:ring-red-500' : ''
+                errors.phone
+                  ? "border-red-300 focus:border-red-500 focus:ring-red-500"
+                  : ""
               )}
               placeholder={t.contact.form.phone}
               required
@@ -246,8 +267,10 @@ const ContactForm = ({
             rows={5}
             className={classNames(
               inputStyles,
-              'resize-vertical',
-              errors.message ? 'border-red-300 focus:border-red-500 focus:ring-red-500' : ''
+              "resize-vertical",
+              errors.message
+                ? "border-red-300 focus:border-red-500 focus:ring-red-500"
+                : ""
             )}
             placeholder={t.contact.form.message}
             required
@@ -262,17 +285,20 @@ const ContactForm = ({
           type="submit"
           variant="primary"
           size="lg"
-          disabled={status === 'loading'}
+          disabled={status === "loading"}
           className="w-full group"
         >
-          {status === 'loading' ? (
+          {status === "loading" ? (
             <>
               <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
               {t.contact.form.sending}
             </>
           ) : (
             <>
-              <Send size={20} className="mr-2 group-hover:translate-x-1 transition-transform duration-200" />
+              <Send
+                size={20}
+                className="mr-2 group-hover:translate-x-1 transition-transform duration-200"
+              />
               {t.contact.form.send}
             </>
           )}

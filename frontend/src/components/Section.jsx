@@ -1,27 +1,27 @@
-import { classNames } from '../lib/classNames';
+import { classNames } from "../lib/classNames";
 
-const Section = ({ 
+const Section = ({
   children,
-  className = '',
-  containerClassName = '',
-  background = 'white',
-  padding = 'default',
+  className = "",
+  containerClassName = "",
+  background = "white",
+  padding = "default",
   id,
   ...props
 }) => {
   const backgrounds = {
-    white: 'bg-white',
-    gray: 'bg-gray-50',
-    blue: 'bg-blue-50',
-    orange: 'bg-orange-50'
+    white: "bg-white",
+    gray: "bg-gray-50",
+    blue: "bg-blue-50",
+    orange: "bg-orange-50",
   };
 
   const paddings = {
-    none: '',
-    sm: 'py-8',
-    default: 'py-16',
-    lg: 'py-20',
-    xl: 'py-24'
+    none: "",
+    sm: "py-8",
+    default: "py-16",
+    lg: "py-20",
+    xl: "py-24",
   };
 
   return (
@@ -34,10 +34,12 @@ const Section = ({
       )}
       {...props}
     >
-      <div className={classNames(
-        'max-w-7xl mx-auto px-4 sm:px-6 lg:px-8',
-        containerClassName
-      )}>
+      <div
+        className={classNames(
+          "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8",
+          containerClassName
+        )}
+      >
         {children}
       </div>
     </section>

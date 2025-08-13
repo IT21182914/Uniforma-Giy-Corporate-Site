@@ -1,10 +1,10 @@
 /**
  * Utility function to combine CSS classes conditionally
- * @param {...(string|boolean|undefined|null)} classes 
+ * @param {...(string|boolean|undefined|null)} classes
  * @returns {string}
  */
 export function classNames(...classes) {
-  return classes.filter(Boolean).join(' ');
+  return classes.filter(Boolean).join(" ");
 }
 
 /**
@@ -15,12 +15,12 @@ export function classNames(...classes) {
  */
 export function cn(base, conditionalClasses = {}) {
   const classes = [base];
-  
+
   Object.entries(conditionalClasses).forEach(([condition, className]) => {
     if (condition && className) {
       classes.push(className);
     }
   });
-  
-  return classes.filter(Boolean).join(' ');
+
+  return classes.filter(Boolean).join(" ");
 }
