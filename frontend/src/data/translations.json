@@ -1,0 +1,128 @@
+{
+  "TR": {
+    "nav": {
+      "home": "Ana Sayfa",
+      "about": "Hakkımızda",
+      "products": "Ürünler",
+      "certificates": "Sertifikalar",
+      "contact": "İletişim"
+    },
+    "hero": {
+      "headline": "Profesyonel İş Kiyafetleri",
+      "subtext": "Kaliteli, dayanıklı ve güvenli iş kıyafetleri ile çalışanlarınızın güvenliğini sağlayın. Endüstrinin lideri Üniforma Giy ile tanışın.",
+      "primaryCta": "Ürünlerimizi Keşfedin",
+      "secondaryCta": "Hemen İletişime Geçin"
+    },
+    "about": {
+      "title": "Hakkımızda",
+      "subtitle": "25 yıllık deneyim ile iş güvenliği alanında lider",
+      "story": "1998 yılından bu yana Türkiye'nin en güvenilir iş kıyafetleri üreticisiyiz. Kalite, güvenlik ve müşteri memnuniyetini ön planda tutarak sektörde öncü olmaya devam ediyoruz.",
+      "mission": "Misyonumuz",
+      "missionText": "Çalışanların güvenliği ve konforu için en yüksek kaliteli iş kıyafetleri üretmek.",
+      "vision": "Vizyonumuz",
+      "visionText": "İş güvenliği sektöründe Türkiye'nin ilk tercihi olmak ve dünya çapında tanınan bir marka haline gelmek."
+    },
+    "products": {
+      "title": "Ürünlerimiz",
+      "subtitle": "Her sektör için özel tasarlanmış kaliteli iş kıyafetleri",
+      "searchPlaceholder": "Ürün ara...",
+      "sortBy": "Sırala",
+      "requestQuote": "Fiyat Talebi",
+      "noProducts": "Ürün bulunamadı"
+    },
+    "contact": {
+      "title": "İletişim",
+      "subtitle": "Size nasıl yardımcı olabiliriz?",
+      "whatsappHeader": "WhatsApp'tan Sohbet Et",
+      "form": {
+        "name": "Ad Soyad",
+        "email": "E-posta",
+        "phone": "Telefon",
+        "company": "Şirket",
+        "message": "Mesajınız",
+        "send": "Gönder",
+        "sending": "Gönderiliyor...",
+        "success": "Mesajınız başarıyla gönderildi!",
+        "error": "Bir hata oluştu. Lütfen tekrar deneyin."
+      }
+    },
+    "footer": {
+      "newsletter": "Bülten",
+      "newsletterText": "Yeni ürünler ve haberler için abone olun",
+      "subscribe": "Abone Ol",
+      "quickLinks": "Hızlı Bağlantılar",
+      "followUs": "Bizi Takip Edin"
+    },
+    "common": {
+      "learnMore": "Daha Fazla",
+      "viewAll": "Tümünü Gör",
+      "close": "Kapat",
+      "loading": "Yükleniyor...",
+      "error": "Hata",
+      "success": "Başarılı"
+    }
+  },
+  "EN": {
+    "nav": {
+      "home": "Home",
+      "about": "About Us",
+      "products": "Products",
+      "certificates": "Certificates",
+      "contact": "Contact"
+    },
+    "hero": {
+      "headline": "Professional Work Uniforms",
+      "subtext": "Ensure your employees' safety with high-quality, durable and safe work clothing. Meet Üniforma Giy, the industry leader.",
+      "primaryCta": "Explore Our Products",
+      "secondaryCta": "Contact Us Now"
+    },
+    "about": {
+      "title": "About Us",
+      "subtitle": "Industry leader in workplace safety with 25 years of experience",
+      "story": "Since 1998, we have been Turkey's most trusted work clothing manufacturer. We continue to be a pioneer in the industry, prioritizing quality, safety and customer satisfaction.",
+      "mission": "Our Mission",
+      "missionText": "To produce the highest quality work clothes for employee safety and comfort.",
+      "vision": "Our Vision",
+      "visionText": "To be Turkey's first choice in the occupational safety sector and become a globally recognized brand."
+    },
+    "products": {
+      "title": "Our Products",
+      "subtitle": "Quality work clothes specially designed for every sector",
+      "searchPlaceholder": "Search products...",
+      "sortBy": "Sort by",
+      "requestQuote": "Request Quote",
+      "noProducts": "No products found"
+    },
+    "contact": {
+      "title": "Contact",
+      "subtitle": "How can we help you?",
+      "whatsappHeader": "Chat on WhatsApp",
+      "form": {
+        "name": "Full Name",
+        "email": "Email",
+        "phone": "Phone",
+        "company": "Company",
+        "message": "Your Message",
+        "send": "Send",
+        "sending": "Sending...",
+        "success": "Your message has been sent successfully!",
+        "error": "An error occurred. Please try again."
+      }
+    },
+    "footer": {
+      "newsletter": "Newsletter",
+      "newsletterText": "Subscribe for new products and news",
+      "subscribe": "Subscribe",
+      "quickLinks": "Quick Links",
+      "followUs": "Follow Us"
+    },
+    "common": {
+      "learnMore": "Learn More",
+      "viewAll": "View All",
+      "close": "Close",
+      "loading": "Loading...",
+      "error": "Error",
+      "success": "Success"
+    }
+  }
+}

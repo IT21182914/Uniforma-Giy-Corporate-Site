@@ -1,0 +1,116 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "category": "work-uniforms",
+      "title": {
+        "TR": "Profesyonel İş Elbisesi",
+        "EN": "Professional Work Uniform"
+      },
+      "description": {
+        "TR": "Dayanıklı kumaş ile üretilmiş profesyonel iş elbisesi",
+        "EN": "Professional work uniform made with durable fabric"
+      },
+      "image": "/api/placeholder/300/300",
+      "featured": true
+    },
+    {
+      "id": 2,
+      "category": "polo-shirts",
+      "title": {
+        "TR": "İş Polo Tişört",
+        "EN": "Work Polo Shirt"
+      },
+      "description": {
+        "TR": "Nefes alabilir kumaş ile konforu sağlayan polo tişört",
+        "EN": "Breathable fabric polo shirt ensuring comfort"
+      },
+      "image": "/api/placeholder/300/300",
+      "featured": true
+    },
+    {
+      "id": 3,
+      "category": "vests",
+      "title": {
+        "TR": "Güvenlik Yeleği",
+        "EN": "Safety Vest"
+      },
+      "description": {
+        "TR": "Yüksek görünürlük sağlayan reflektörlü güvenlik yeleği",
+        "EN": "High-visibility reflective safety vest"
+      },
+      "image": "/api/placeholder/300/300",
+      "featured": true
+    },
+    {
+      "id": 4,
+      "category": "jackets",
+      "title": {
+        "TR": "İş Ceketi",
+        "EN": "Work Jacket"
+      },
+      "description": {
+        "TR": "Su geçirmez ve rüzgar geçirmez iş ceketi",
+        "EN": "Waterproof and windproof work jacket"
+      },
+      "image": "/api/placeholder/300/300",
+      "featured": false
+    },
+    {
+      "id": 5,
+      "category": "overalls",
+      "title": {
+        "TR": "İş Tulumu",
+        "EN": "Work Overalls"
+      },
+      "description": {
+        "TR": "Tam koruma sağlayan profesyonel iş tulumu",
+        "EN": "Professional work overalls providing full protection"
+      },
+      "image": "/api/placeholder/300/300",
+      "featured": false
+    },
+    {
+      "id": 6,
+      "category": "work-uniforms",
+      "title": {
+        "TR": "Hastane Uniforması",
+        "EN": "Hospital Uniform"
+      },
+      "description": {
+        "TR": "Sağlık sektörü için özel tasarlanmış hijyenik uniform",
+        "EN": "Hygienic uniform specially designed for healthcare sector"
+      },
+      "image": "/api/placeholder/300/300",
+      "featured": false
+    },
+    {
+      "id": 7,
+      "category": "polo-shirts",
+      "title": {
+        "TR": "Logolu Polo Tişört",
+        "EN": "Logo Polo Shirt"
+      },
+      "description": {
+        "TR": "Şirket logosu baskılı premium polo tişört",
+        "EN": "Premium polo shirt with company logo print"
+      },
+      "image": "/api/placeholder/300/300",
+      "featured": false
+    },
+    {
+      "id": 8,
+      "category": "vests",
+      "title": {
+        "TR": "Kış Yeleği",
+        "EN": "Winter Vest"
+      },
+      "description": {
+        "TR": "Soğuk havalarda koruma sağlayan termal yelek",
+        "EN": "Thermal vest providing protection in cold weather"
+      },
+      "image": "/api/placeholder/300/300",
+      "featured": false
+    }
+  ]
+}

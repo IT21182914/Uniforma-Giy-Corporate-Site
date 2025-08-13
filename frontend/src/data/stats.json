@@ -1,0 +1,80 @@
+{
+  "stats": [
+    {
+      "id": 1,
+      "value": "25+",
+      "label": {
+        "TR": "Yıl Deneyim",
+        "EN": "Years Experience"
+      }
+    },
+    {
+      "id": 2,
+      "value": "10K+",
+      "label": {
+        "TR": "Mutlu Müşteri",
+        "EN": "Happy Customers"
+      }
+    },
+    {
+      "id": 3,
+      "value": "50+",
+      "label": {
+        "TR": "Ürün Çeşidi",
+        "EN": "Product Varieties"
+      }
+    },
+    {
+      "id": 4,
+      "value": "99%",
+      "label": {
+        "TR": "Müşteri Memnuniyeti",
+        "EN": "Customer Satisfaction"
+      }
+    }
+  ],
+  "testimonials": [
+    {
+      "id": 1,
+      "name": "Ahmet Yılmaz",
+      "position": {
+        "TR": "İnsan Kaynakları Müdürü",
+        "EN": "Human Resources Manager"
+      },
+      "company": "ABC Şirket",
+      "content": {
+        "TR": "Üniforma Giy ile çalışmak harika bir deneyim. Kaliteli ürünler ve mükemmel hizmet.",
+        "EN": "Working with Üniforma Giy has been a great experience. Quality products and excellent service."
+      },
+      "rating": 5
+    },
+    {
+      "id": 2,
+      "name": "Fatma Demir",
+      "position": {
+        "TR": "Satın Alma Uzmanı",
+        "EN": "Procurement Specialist"
+      },
+      "company": "XYZ Ltd",
+      "content": {
+        "TR": "Zamanında teslimat ve uygun fiyatlar. Kesinlikle tavsiye ediyorum.",
+        "EN": "On-time delivery and competitive prices. I definitely recommend them."
+      },
+      "rating": 5
+    },
+    {
+      "id": 3,
+      "name": "Mehmet Kaya",
+      "position": {
+        "TR": "İş Güvenliği Uzmanı",
+        "EN": "Occupational Safety Specialist"
+      },
+      "company": "DEF Fabrika",
+      "content": {
+        "TR": "İş güvenliği standartlarına uygun ürünler. Çalışanlarımız çok memnun.",
+        "EN": "Products compliant with occupational safety standards. Our employees are very satisfied."
+      },
+      "rating": 5
+    }
+  ]
+}

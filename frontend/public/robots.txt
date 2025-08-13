@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://uniformagiy.com/sitemap.xml
+
+# Disallow admin and private areas (when added later)
+Disallow: /admin/
+Disallow: /api/private/
