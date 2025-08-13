@@ -11,7 +11,7 @@
         "TR": "Dayanıklı kumaş ile üretilmiş profesyonel iş elbisesi",
         "EN": "Professional work uniform made with durable fabric"
       },
-      "image": "/api/placeholder/300/300",
+      "image": "https://cdn.pixabay.com/photo/2015/09/24/23/36/construction-worker-956496_1280.jpg",
       "featured": true
     },
     {
@@ -25,7 +25,7 @@
         "TR": "Nefes alabilir kumaş ile konforu sağlayan polo tişört",
         "EN": "Breathable fabric polo shirt ensuring comfort"
       },
-      "image": "/api/placeholder/300/300",
+      "image": "https://cdn.pixabay.com/photo/2019/02/25/22/25/construction-worker-4020775_1280.jpg",
       "featured": true
     },
     {
@@ -39,7 +39,7 @@
         "TR": "Yüksek görünürlük sağlayan reflektörlü güvenlik yeleği",
         "EN": "High-visibility reflective safety vest"
       },
-      "image": "/api/placeholder/300/300",
+      "image": "https://cdn.pixabay.com/photo/2015/09/24/23/36/construction-worker-956496_1280.jpg",
       "featured": true
     },
     {
